@@ -1,0 +1,76 @@
+name: Akashi
+options:
+  bundleIdPrefix: com.akashi.app
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_LANGUAGE: ja
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+
+targets:
+  Akashi:
+    type: application
+    platform: iOS
+    sources:
+      - path: Sources
+    resources:
+      - path: Sources/Resources
+    info:
+      path: Sources/App/Info.plist
+      properties:
+        CFBundleDisplayName: あかし
+        UILaunchScreen: {}
+        NSMicrophoneUsageDescription: 疑われた状況を音声で記録するために、マイクを使用します。記録はユーザーの操作によってのみ開始されます。
+        NSCameraUsageDescription: 両手の位置の撮影や、カメラを使用していないことの証明のために、カメラを使用します。
+        NSLocationWhenInUseUsageDescription: 記録の日時・場所を証拠として残すために、位置情報を使用します。
+        NSPhotoLibraryAddUsageDescription: 撮影した証拠写真・動画を保存するために使用します。
+        ITSAppUsesNonExemptEncryption: false
+        UIBackgroundModes:
+          - audio
+          - location
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+      entitlements:
+        path: Sources/App/Akashi.entitlements
+        properties:
+          com.apple.developer.in-app-payments: []
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.akashi.app.Akashi
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_EMIT_LOC_STRINGS: true
+        ENABLE_PREVIEWS: true
+    capabilities:
+      InAppPurchase: {}
+    dependencies: []
+
+  AkashiTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: AkashiTests
+    dependencies:
+      - target: Akashi
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.akashi.app.AkashiTests
+
+schemes:
+  Akashi:
+    build:
+      targets:
+        Akashi: all
+        AkashiTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - AkashiTests
+    archive:
+      config: Release
