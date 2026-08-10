@@ -32,7 +32,6 @@ targets:
         ITSAppUsesNonExemptEncryption: false
         UIBackgroundModes:
           - audio
-          - location
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
       entitlements:

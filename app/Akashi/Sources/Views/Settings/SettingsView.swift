@@ -20,10 +20,10 @@ struct SettingsView: View {
                 }
             }
             Section("法的情報") {
-                // TODO: GitHub Pages公開後、実際のURLに差し替える
-                Link("プライバシーポリシー", destination: URL(string: "https://example.com/akashi/privacy")!)
-                Link("利用規約", destination: URL(string: "https://example.com/akashi/terms")!)
-                Link("特定商取引法に基づく表記", destination: URL(string: "https://example.com/akashi/tokushoho")!)
+                // GitHub Pages (docs/legal) で公開。リポジトリのSettings > Pagesを
+                // 有効化してから利用可能になります。利用規約・特定商取引法に基づく
+                // 表記は、正式なApp Store公開の準備が整い次第、同様に公開して追記します。
+                Link("プライバシーポリシー", destination: URL(string: "https://yuu642.github.io/create_app/legal/privacy_policy.html")!)
             }
             Section {
                 Text("バージョン \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0.1.0")")

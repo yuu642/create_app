@@ -4,6 +4,7 @@ struct ThemePickerView: View {
     @EnvironmentObject private var themeManager: ThemeManager
     @EnvironmentObject private var storeService: StoreService
     @State private var purchasingTheme: AppPalette?
+    @State private var showSupporterScreen = false
 
     var body: some View {
         let palette = themeManager.currentTheme
@@ -39,7 +40,11 @@ struct ThemePickerView: View {
             Button("キャンセル", role: .cancel) { purchasingTheme = nil }
             Button("応援画面を開く") {
                 purchasingTheme = nil
+                showSupporterScreen = true
             }
+        }
+        .navigationDestination(isPresented: $showSupporterScreen) {
+            SupporterView()
         }
     }
 

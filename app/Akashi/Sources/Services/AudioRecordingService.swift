@@ -11,8 +11,10 @@ final class AudioRecordingService: NSObject, ObservableObject {
     private var startDate: Date?
 
     func requestPermission() async -> Bool {
+        // Uses the AVAudioSession-based API (rather than iOS 17's AVAudioApplication)
+        // to stay compatible with the iOS 16.0 deployment target in project.yml.
         await withCheckedContinuation { continuation in
-            AVAudioApplication.requestRecordPermission { granted in
+            AVAudioSession.sharedInstance().requestRecordPermission { granted in
                 continuation.resume(returning: granted)
             }
         }
