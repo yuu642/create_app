@@ -1,0 +1,104 @@
+{
+  "identifier" : "6A0000000000000000000001",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "120",
+      "familyShareable" : false,
+      "internalID" : "6A0000000000000000000011",
+      "localizations" : [
+        {
+          "description" : "サポーターバッジ + テーマ1種",
+          "displayName" : "コーヒー1杯分",
+          "locale" : "ja_JP"
+        }
+      ],
+      "productID" : "com.akashi.app.supporter.coffee",
+      "referenceName" : "Supporter Coffee",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "490",
+      "familyShareable" : false,
+      "internalID" : "6A0000000000000000000012",
+      "localizations" : [
+        {
+          "description" : "着せ替え3種 + アラームボイス2種",
+          "displayName" : "ランチ1食分",
+          "locale" : "ja_JP"
+        }
+      ],
+      "productID" : "com.akashi.app.supporter.lunch",
+      "referenceName" : "Supporter Lunch",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "980",
+      "familyShareable" : false,
+      "internalID" : "6A0000000000000000000013",
+      "localizations" : [
+        {
+          "description" : "全テーマ + 全ボイス + 今後の新機能先行案内",
+          "displayName" : "めいっぱい応援",
+          "locale" : "ja_JP"
+        }
+      ],
+      "productID" : "com.akashi.app.supporter.full",
+      "referenceName" : "Supporter Full",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "250",
+      "familyShareable" : false,
+      "internalID" : "6A0000000000000000000021",
+      "localizations" : [
+        {
+          "description" : "季節限定・応援で解放",
+          "displayName" : "着せ替え さくら",
+          "locale" : "ja_JP"
+        }
+      ],
+      "productID" : "com.akashi.app.theme.sakura",
+      "referenceName" : "Theme Sakura",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "250",
+      "familyShareable" : false,
+      "internalID" : "6A0000000000000000000022",
+      "localizations" : [
+        {
+          "description" : "ダーク配色・応援で解放",
+          "displayName" : "着せ替え 夜のしずく",
+          "locale" : "ja_JP"
+        }
+      ],
+      "productID" : "com.akashi.app.theme.night",
+      "referenceName" : "Theme Night",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "250",
+      "familyShareable" : false,
+      "internalID" : "6A0000000000000000000023",
+      "localizations" : [
+        {
+          "description" : "応援で解放",
+          "displayName" : "着せ替え 朝焼け",
+          "locale" : "ja_JP"
+        }
+      ],
+      "productID" : "com.akashi.app.theme.dawn",
+      "referenceName" : "Theme Dawn",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_locale" : "ja_JP"
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

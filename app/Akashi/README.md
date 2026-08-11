@@ -28,6 +28,23 @@ Xcodeが開いたら:
 2. Bundle Identifier (`com.akashi.app.Akashi`) を、実際にApp Store Connectで登録するIDに変更する(必要に応じて`project.yml`も更新して`xcodegen generate`を再実行)
 3. シミュレーターまたは実機でビルド・実行して動作確認する
 
+## まずは無料の範囲で試す
+
+Apple Developer Program($99/年)に登録しなくても、無料のApple IDだけで、自分のiPhoneにアプリをインストールして動作確認できます。
+
+1. Xcodeの「Signing & Capabilities」で、Teamに自分のApple ID(サインインしていなければ「Add Account...」から追加)を選ぶと、自動的に「〇〇 (Personal Team)」が選べるようになります
+2. iPhoneをMacにケーブルで接続し、Xcode上部の実行先を自分の端末に切り替えて実行(▶ボタン)
+3. 初回は端末側で「設定 → 一般 → VPNとデバイス管理」から、このApple IDのデベロッパApp設定を「信頼」する必要があります
+4. **制約**: 無料のプロビジョニングプロファイルは7日で失効するため、7日ごとにXcodeから再インストールが必要です。TestFlightは使えず、あくまで自分の端末での動作確認用です
+
+### アプリ内課金(IAP)も無料でテストできます
+
+`Products.storekit` (Xcode StoreKit Testing用の設定ファイル)を同梱しています。Xcodeで以下を設定すると、App Store Connectに商品登録しなくても、purchaseフローをローカルでシミュレートできます。
+
+1. Xcodeメニュー「Product」→「Scheme」→「Edit Scheme...」
+2. 「Run」タブ →「Options」→「StoreKit Configuration」で `Products.storekit` を選択
+3. 実行すると、応援課金・着せ替えの購入ボタンがローカルのテスト決済で動作します(実際の課金は発生しません)
+
 ## プロジェクト構成
 
 ```

@@ -3,7 +3,22 @@
 「あかし」をTestFlightの外部テストとして配布するまでの、あなた(澤井さん)ご自身がApple ID/Mac上で行う作業の手順です。
 コード側の準備(SwiftUIアプリ本体)はリポジトリの`app/Akashi`にあります。
 
-## 0. 事前に必要なもの
+費用をかけずに動作確認したい場合は、まず**Stage 0(無料)**だけを行い、納得できてからStage 1(Apple Developer Program登録、$99/年)に進んでください。
+
+## Stage 0(無料): 自分の端末でだけ動作確認する
+
+Apple Developer Programに登録しなくても、無料のApple IDだけで自分のiPhoneにインストールして動作確認できます。詳しい手順は`app/Akashi/README.md`の「まずは無料の範囲で試す」セクションを参照してください。要点は以下の通りです。
+
+- [ ] Mac + Xcode 15以降、無料のApple ID
+- [ ] Xcodeの「Signing & Capabilities」で自分のApple ID(Personal Team)を選択し、実機にビルド・実行
+- [ ] 初回は端末側で「設定 → 一般 → VPNとデバイス管理」からデベロッパを信頼する
+- [ ] 無料プロビジョニングは7日で失効するため、都度Xcodeから再インストールが必要
+- [ ] アプリ内課金は、同梱の`Products.storekit`をXcodeのスキーム設定(Run → Options → StoreKit Configuration)で指定すれば、課金なしでローカルにテストできる
+- [ ] TestFlightは使えないため、自分以外の人には配布できない(友人にも試してもらいたくなったらStage 1へ)
+
+## Stage 1(有料・$99/年): TestFlightで外部テストする
+
+### 0. 事前に必要なもの
 
 - [ ] Mac + Xcode 15以降
 - [ ] Apple ID(個人のもので可)
